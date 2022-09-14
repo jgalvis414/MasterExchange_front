@@ -1,5 +1,5 @@
 import { useMemo, useEffect, useState } from "react";
-import {API, endpoint} from "../../instances/instances.js"
+import { API, endpoint } from "../../instances/instances.js";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -13,7 +13,6 @@ import {
   Filler,
 } from "chart.js";
 
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -26,26 +25,23 @@ ChartJS.register(
 );
 
 export default function LineChart(props) {
-
   let [chart, setChart] = useState([]);
 
   useEffect(() => {
     (async () => {
       try {
         if (props.crypto != null) {
-          let response = await API.get(endpoint.GET_DATA_CHART+`${props.crypto}`);
+          let response = await API.get(
+            endpoint.GET_DATA_CHART + `${props.crypto}`
+          );
           setChart(response.data);
-
-        }else{
-         
+        } else {
         }
       } catch (err) {
         console.log("error", err);
       }
     })();
   }, [props.crypto]);
-
- 
 
   const dataTransformer = (d) => {
     //Transformando la fecha de la vela
@@ -56,15 +52,26 @@ export default function LineChart(props) {
 
   const options = {
     fill: false,
-    scales:{
-     x: {
-      display: false,
-     },
-     y:{
-      color: 'red'
-      
-    }
-    },   
+    scales: {
+      x: {
+        display: false,
+  
+      },
+      y: {
+        backgroundColor: "",
+        display: true,
+        gridLines: {
+          color: "white",
+        },
+        grid: {
+          lineWidth: 0,
+        },
+        ticks: {
+          color: "#270537",
+          padding: 3,
+        },
+      },
+    },
     responsive: true,
     plugins: {
       legend: {
@@ -73,20 +80,18 @@ export default function LineChart(props) {
     },
   };
 
-  
-  
-  let dataLine = (props, ) => {  
+  let dataLine = (props) => {
     const result = {
       datasets: [
         {
-          backgroundColor: '',
-          label: `${props.crypto == null ? 'BTC' : props.crypto}USDT`,
+          backgroundColor: "#270537",
+          label: `${props.crypto == null ? "BTC" : props.crypto}USDT`,
           data: chart?.map((item) => {
             return item[4];
           }),
-          tension: 0.1,
-          borderColor: "#293462",
-          pointRadius: 1,
+          tension: 0,
+          borderColor: "#270537",
+          pointRadius: 0,
           pointBackgroundColor: "",
         },
       ],
@@ -94,17 +99,13 @@ export default function LineChart(props) {
         item = dataTransformer(item[6]);
         return item;
       }),
-    }
+    };
     return result;
-   
   };
 
   return (
     <>
-
       <Line data={dataLine(props)} options={options} />
-  
     </>
   );
 }
-

@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import LineChart from "./LineChart";
 import InputBuy from "./InputBuy";
+//import './BuyCrypto.css'
 
 const BuyCryto = () => {
   const [crypto, setCrypto] = useState(null);
@@ -23,7 +23,7 @@ const BuyCryto = () => {
           <option>DASH</option>
           <option>LTC</option>
         </select>
-        <div className="container">
+        <div className="containerBuy">
           <div className="chartContainer">
             <LineChart crypto={crypto} />
           </div>
