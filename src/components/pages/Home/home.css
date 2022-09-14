@@ -1,0 +1,22 @@
+.div {
+    
+    box-shadow:
+  3.4px 3.4px 2.7px rgba(0, 0, 0, 0.041),
+  8.7px 8.7px 6.9px rgba(0, 0, 0, 0.046),
+  17.7px 17.7px 14.2px rgba(0, 0, 0, 0.048),
+  36.5px 36.5px 29.2px rgba(0, 0, 0, 0.049),
+  100px 100px 80px rgba(0, 0, 0, 0.06),
+
+    
+
+}
+.Container {
+  margin: 0 auto;
+  max-width: 50%;
+  max-height: 40%;
+} 
+.Container2 {
+  margin: 0 auto;
+  max-width: 20%;
+  max-height: 20%;
+} 
