@@ -2,14 +2,15 @@ import React from "react";
 import { useState, useEffect } from "react";
 import LineChart from "./LineChart";
 import InputBuy from "./InputBuy";
-//import './BuyCrypto.css'
+import './BuyCrypto.css';
+import Footer from "../../utils/Footer/Footer";
 
 const BuyCryto = () => {
   const [crypto, setCrypto] = useState(null);
 
   return (
     <>
-      <div>
+      <div className="bodyMarket">
         <select className="select-group"
           onChange={(e) => {
             setCrypto(e.target.value);
@@ -27,11 +28,18 @@ const BuyCryto = () => {
           <div className="chartContainer">
             <LineChart crypto={crypto} />
           </div>
+
+          <div className="flex2">
+            
+          </div>
+
           <div className="inputContainer">
             <InputBuy crypto={crypto} />
           </div>
         </div>
       </div>
+      <Footer/>
+      
     </>
   );
 };

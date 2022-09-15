@@ -13,7 +13,6 @@ import Market from "./pages/Market/Market";
 import SimpleCard from "./pages/LoginChakra/LoginChakra";
 import NavBarControl from "./utils/Navbar/NavBarControl";
 import RegisterChakra from "./pages/RegisterPage/RegisterChakra";
-import Footer from "./utils/Footer/Footer";
 
 //user != null
 // authenticated == true

@@ -84,7 +84,7 @@ export default function LineChart(props) {
     const result = {
       datasets: [
         {
-          backgroundColor: "#270537",
+          backgroundColor: "#38A169",
           label: `${props.crypto == null ? "BTC" : props.crypto}USDT`,
           data: chart?.map((item) => {
             return item[4];

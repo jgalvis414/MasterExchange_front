@@ -28,24 +28,27 @@ const InputBuy = (props) => {
   return (
     <>
       <form>
-        <h2>
+        <h2 className="title">
           {" "}
           {props.crypto != null ? `${props.crypto} Price Calculator` : " "}
         </h2>
         <input
+          className="input"
           type="text"
           name="inputname"
           value={props.crypto != null ? ` 1 ${props.crypto} = ${data}$` : " "}
           disabled
         ></input>
         <input
+          className="input"
           type="number"
+          placeholder="0.00"
           onChange={(event) => {
             setAmount(event.target.value);
           }}
         ></input>
         <p>Precio USDT: {(amount * data).toFixed(2)}</p>
-        <button>Comprar</button>
+        <button className="boton">Comprar</button>
       </form>
     </>
   );

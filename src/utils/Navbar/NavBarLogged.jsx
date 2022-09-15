@@ -59,7 +59,7 @@ export default function NavBarLogged() {
 
     return (
         <>
-          <Box bg={useColorModeValue("#270537")} px={4}>
+          <Box bg={useColorModeValue("#252440")} px={4}>
             <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
               <IconButton
                 size={"md"}
@@ -69,7 +69,9 @@ export default function NavBarLogged() {
                 onClick={isOpen ? onClose : onOpen}
               />
               <HStack spacing={8} alignItems={"center"} color='white'>
-                <Box>Master Exchange</Box>
+              <Box w="180px" h='20px'>
+                <a href="/"><img src="https://i.ibb.co/DkpqKw7/exchange.png" alt="exchange" border="0" /></a>
+                </Box>
                 <HStack
                   as={"nav"}
                   alignItems={"center"}
