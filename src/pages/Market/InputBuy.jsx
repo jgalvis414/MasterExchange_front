@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
+//instancias de endpoint
+import {API, endpoint } from "../../instances/instances.js"
 
 const InputBuy = (props) => {
   let [data, setData] = useState("");
@@ -13,9 +14,7 @@ const InputBuy = (props) => {
     (async () => {
       try {
         if (props.crypto != null) {
-          let response = await axios.get(
-            `http://localhost:8888/.netlify/functions/fn-tickerPrice?crypto=${props.crypto}`
-          );
+          let response = await API.get(endpoint.PRICE_COIN+`${props.crypto}`);
           response = Number(response.data);
           setData(response.toFixed(2));
         } else {
@@ -29,24 +28,27 @@ const InputBuy = (props) => {
   return (
     <>
       <form>
-        <h2>
+        <h2 className="title">
           {" "}
           {props.crypto != null ? `${props.crypto} Price Calculator` : " "}
         </h2>
         <input
+          className="input"
           type="text"
           name="inputname"
           value={props.crypto != null ? ` 1 ${props.crypto} = ${data}$` : " "}
           disabled
         ></input>
         <input
+          className="input"
           type="number"
+          placeholder="0.00"
           onChange={(event) => {
             setAmount(event.target.value);
           }}
         ></input>
         <p>Precio USDT: {(amount * data).toFixed(2)}</p>
-        <button>Comprar</button>
+        <button className="boton">Comprar</button>
       </form>
     </>
   );
