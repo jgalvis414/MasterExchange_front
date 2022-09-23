@@ -1,7 +1,9 @@
-import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
-
 import { useNavigate } from "react-router-dom";
+//Instancias de endpoint
+import {API, endpoint} from "../instances/instances.js"
+import swal from 'sweetalert'
+
 
 export const AuthContext = createContext();
 
@@ -20,12 +22,16 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const response = await axios.post(
-      "http://localhost:8888/.netlify/functions/fn-loginToken",
+    const response = await API.post(endpoint.CREATE_TOKEN,
       JSON.stringify({ email, password })
     );
         if (response.data == null) {
-          return alert('sus credenciales no son validas')
+          return swal({
+            title:'Error al iniciar sesion',
+            text: 'Sus credenciales no son validas',
+            icon: 'error',
+
+          })
 
         }
     console.log("login", response.data);

@@ -1,0 +1,16 @@
+.containerChart {
+    width: 200px;
+}
+.containerDashboard {
+    display: flex;
+    flex-grow: 2;
+    background-color: blue;
+}
+.containerButtons {
+  
+    background-color: red;
+}
+.containerBalance {
+   
+    background-color: orange;
+}

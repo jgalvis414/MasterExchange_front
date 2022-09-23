@@ -18,209 +18,211 @@
     justify-content: start;
     align-content: flex-start;
     height: 79vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/fondoBienvenida.jpg");
+    border-radius: 3px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../../../../public/assets/fondoBienvenida.jpg");
     background-size: cover;
     background-repeat:no-repeat;
-    background-position: center center;
+    background-position: center bottom;
+    background-attachment: fixed;
 }
 
 .conteinerslogan {
     min-height: 100%;
-    min-width: 50%;
+    min-width: 100%;
     position: relative;
 }
 
 .slogan {
-    top: 180px;
-    left: 390px;
-    width: 350px;
-    font-size: 4rem;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 850px;
+    font-size: 6rem;
     position: absolute;
+    text-align: center;
     color: white;
     font-family: 'Bebas Neue', cursive;
 }
 
 .InfoBienvenida {
-    top:75%;
+    top:360px;
     color: white;
-    left: 400px;
-    width: 490px;
-    font-size: 1.3rem;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 800px;
+    font-size: 2rem;
     position: absolute;
-}
-
-.ButtonBienvenida {
-    padding: 15px 61.1px;
-    border: rgb(255, 255, 255) 2px solid;
-    background-color: #1c7866;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    top:88%;
-    left: 400px;
-    position: absolute;
-}
-
-.contenedorImageWelcome {
-    width: 50%;
-    height: 100%;
-    position: relative;
-}
-
-.contenedorImageWelcome img {
-    width: 60%;
-
-    /* Posicionamiento */
-    position: absolute;
-    left: 200px;
-    top: 200px;
 }
 
 .HomeTable {
     display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
     height: 75vh;
-}
+    border-radius: 3px;
+}    
 
 .ContainerTable {
-    min-width: 55%;
+    width: 100%;
+    margin-left: 100px;
+    margin-right: 100px;
     min-height: 80%;
     position: relative;
 }
 
 .Table {
-    top: 25px;
-    left: 40px;
+    top: -180px;
+    left: 50%;
+    transform: translate(-50%, 0);
     position: absolute;
 }
 
-.infocontainer {
-    width: 45%;
-    height: 100%;
-    position: relative;
-}
-
-.info {
-    top:30%;
-    left: 20%;
-    width: 370px;
-    font-size: 3rem;
-    position: absolute;
-}
-
-.buttonTable {
-    display: block;
-    padding: 15px 86px;
-    border: none;
-    background-color: #1abc9c;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 528px;
-}
-
-.info ~ .buttonTable {
-    margin-left: 20%;
+.Table img {
+    max-width: 1000px;
+    border-radius: 3px;
 }
 
 .HomeServices {
+    height: 120vh;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    background-color: aliceblue;
+}
+
+.WrapperServices{
     display: flex;
-    height: 50vh;
-    background-color: rgb(243, 243, 243);
+    flex-flow: row wrap;
+    margin:0 0 0 -.5rem;
+    height: 100%;
+}
+
+.titleServices {
+    font-size: 50px;
+    font-weight:500;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .conteinerServicesLeft { 
-    left: 330px;
-    width: 33.3%;
-    height: 100%;
-    position: relative;
+    flex: 1 0 37%;  
+    padding: 0 0.5rem 1rem;
+    margin:10% 0 2% 10%;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 25%)
 }
 
 .conteinerServices {
-    left: 130px;
-    width: 33.3%;
-    height: 100%;
-    position: relative;
+    flex: 1 0 37%;  
+    padding: 0 0.5rem 1rem;
+    margin:10% 10% 2% 2%;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 25%);
 }
 
 .conteinerServicesRight { 
-    right: 70px;
-    width: 33.3%;
-    height: 100%;
-    position: relative;
+    flex: 1 0 37%;  
+    padding: 0 0.5rem 1rem;
+    margin:3% 0 2% 10%;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 25%)
+}
+
+.conteinerServices4 {
+    flex: 1 0 37%;  
+    padding: 0 0.5rem 1rem;
+    margin:3% 10% 2% 2%;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 25%);
 }
 
 
 .conteinerImgServices {
-    width: 220px;
-    height: 180px;
+    width: 100%;
+    height: 140px;
+    margin-top: 3%;
     position: relative;
 }
 
 .conteinerServices img {
-    margin-left: 90px;
-    width: 80%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
     height: 100%;
     position: absolute;
 }
 
 .conteinerServicesLeft img {
-    margin-left: 90px;
-    width: 90%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
     height: 100%;
     position: absolute;
 }
 
 .conteinerServicesRight img {
-    margin-left: 90px;
-    width: 90%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 100%;
+    position: absolute;
+}
+.conteinerServices4 img {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
     height: 100%;
     position: absolute;
 }
 
 .conteinerTitleServices {
-    width: 350px;
-    height: 40px;
+    width: 100%;
+    height: 10%;
+    margin-top: 5%;
     position: relative;
 }
 
 .TitleServicesLeft {
-    left: 50px;
-    width: 350px;
-    font-size: 1.4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    font-size: 1.6rem;
     position: absolute;
     font-family: 'Noto Sans', sans-serif;
 }
 
 .TitleServices {
-    left: 115px;
-    width: 350px;
-    font-size: 1.4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    font-size: 1.6rem;
     position: absolute;
     font-family: 'Noto Sans', sans-serif;
 }
 
 .TitleServicesRight {
-    left: 40px;
-    width: 350px;
-    font-size: 1.4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    font-size: 1.6rem;
     position: absolute;
     font-family: 'Noto Sans', sans-serif;
 }
 
-.conteinerImgServices ~ .TitleServices {
-    margin-top: 10px;
-}
-
-.conteinerImgServices ~ .TitleServicesCenter {
-    margin-top: 10px;
+.TitleServices4 {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    font-size: 1.6rem;
+    position: absolute;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .conteinerInfoServices {
-    width: 350px;
+    width: 100%;
     height: 150px;
     position: relative;
 }
@@ -231,27 +233,25 @@
     margin-block-end: 1rem;
     margin-inline-start: 0px;
     margin-inline-end: 0;
-    left: 20px;
-    width: 300px;
-    font-size: 1.1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    font-size: 1.3rem;
     position: absolute;
     text-align: center;
     color: rgb(139, 139, 139);
 }
 
-.TitleServices ~ .infoServices {
-    margin-top: 50px;
-}
-
-.TitleServicesCenter ~ .infoServices {
-    margin-top: 50px;
-}
-
 .HomeAttention {
     display: flex;
     height: 30vh;
-    background-color: #58beaa;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/assets/parallax-img-1.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
     flex-direction: column;
+    border-radius: 3px;
 }
 
 .conteinerAttentionTitle {
@@ -280,8 +280,8 @@
 .ButtonAttention1 {
     padding: 15px 61.1px;
     border: rgb(255, 255, 255) 2px solid;
-    background-color: #1c7866;
-    color: white;
+    background-color: #38a169;
+    color: rgb(255, 255, 255);
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.2rem;
@@ -294,7 +294,7 @@
 .ButtonAttention2 {
     padding: 15px 68px;
     border: rgb(255, 255, 255) 2px solid;
-    background-color: #60beab;
+    background-color: #29774f;
     color: white;
     border-radius: 6px;
     cursor: pointer;
@@ -348,7 +348,7 @@
 }
 
 .HomeFooter .grupo2 {
-    background-color: #0a1a2a;
+    background-color: #080b1c;
     padding: 15px 10px;
     text-align: center;
     color: white;
@@ -359,10 +359,247 @@
 }
 
 @media screen and (max-width:800px) {
-    .HomeFooter .grupo1 {
-        width: 90%;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 30px;
-        padding: 35px 0;
+    .HomeFooter .grupo2 {
+        width: 100%;
+        padding: 25px 0;
     }
+}
+
+@media (min-width: 1000px) and (max-width: 1600px) {
+    .infoServices {
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 80%;
+        font-size: 1.1rem;
+    }
+
+    .TitleServicesLeft {
+        width: 40%;
+        font-size: 1.4rem;
+    }
+    .TitleServices {
+        width: 32%;
+        font-size: 1.4rem;
+    }
+    .TitleServicesRight {
+        width: 74.9%;
+        font-size: 1.4rem;
+    }
+    .TitleServices4 {
+        width: 47%;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 12px;
+    }
+
+    .bienvenida {
+        height: 40vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/assets/fondoBienvenida.jpg");
+        background-size: auto;
+        background-position: center center;
+    }
+
+    .slogan {
+        width: 100%;
+        font-size: 3rem;
+    }
+
+    .InfoBienvenida {
+        top:50%;
+        color: white;
+        left: 52%;
+        transform: translate(-50%,0);
+        width: 75%;
+        font-size: 1.5rem;
+        position: absolute;
+    }
+
+    .HomeTable {
+        display: flex;
+        height: 40vh;
+        border-radius: 3px;
+    }  
+
+    .ContainerTable {
+        width: 100%;
+        margin-left: 2%;
+        margin-right: 2%;
+        min-height: 80%;
+        position: relative;
+    }
+
+    .Table {
+        top: -25%;
+    }
+
+    .Table img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .HomeServices {
+        height: 55vh;
+        
+    }
+
+    .WrapperServices {
+        width: 100%;
+        height: 100%;
+    }
+
+    .titleServices {
+        font-size: 1.5rem;
+        width: auto;
+        transform: translate(-50%, 0);
+    }
+
+    .conteinerServicesLeft {   
+        margin: 10% 0 5% 10%;
+        border-radius: 10px;
+        box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 20%)
+    }
+
+    .conteinerServices {
+        margin:10% 10% 5% 5%;
+        border-radius: 10px;
+        box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 20%);
+    }
+
+    .conteinerServicesRight { 
+        margin: 5% 0 10% 10%;
+        border-radius: 10px;
+        box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 20%);
+    }
+
+    .conteinerServices4 { 
+        margin:5% 10% 10% 5%;
+        border-radius: 10px;
+        box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 20%);
+    }
+    
+
+    .conteinerImgServices {
+        height: 50%;
+    }
+
+    .conteinerServices img {
+        width: 40%;
+        margin-top: 5%;
+    }
+    
+    .conteinerServicesLeft img {
+        width: 40%;
+        margin-top: 5%;
+    }
+    
+    .conteinerServicesRight img {
+        width: 40%;
+        margin-top: 5%;
+    }
+    .conteinerServices4 img {
+        width: 40%;
+        margin-top: 5%;
+    }
+
+    .conteinerTitleServices {
+        width: 100%;
+        height: 20%;
+        position: relative;
+        margin-top: 10%;
+    }
+
+    .TitleServicesLeft {
+        width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .TitleServices {
+        width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .TitleServicesRight {
+        width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .TitleServices4 {
+        width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .conteinerInfoServices {
+        display: none;
+    }
+
+    .infoServices {
+        display: none;
+    }
+
+    .HomeAttention {
+        display: flex;
+        height: 25vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/assets/parallax-img-1.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+        flex-direction: column;
+        border-radius: 3px;
+    }
+
+    .conteinerAttentionTitle {
+        width: 100%;
+        height: 65%;
+        position: relative;
+    }
+
+    .AttentionTitle {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 2.5rem;
+        position: absolute;
+        color: white;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    .ButtonAttention1 {
+        padding: 3% 10%;
+        border: rgb(255, 255, 255) 2px solid;
+        background-color: #38a169;
+        color: rgb(255, 255, 255);
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        top:50%;
+        left: 48%;
+        transform: translate(-100%, -50%);
+        position: absolute;
+    }
+
+    .ButtonAttention2 {
+        padding: 3% 10%;
+        border: rgb(255, 255, 255) 2px solid;
+        background-color: #29774f;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        top:50%;
+        left: 55%;
+        transform: translate(0, -50%);
+        position: absolute;
+    }
+
+    
 }
