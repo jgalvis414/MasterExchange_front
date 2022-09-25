@@ -37,7 +37,7 @@ export default function SimpleCard() {
   if (!authenticated) {
   return (
     <Flex
-      minH={"93.9vh"}
+      minH={["100vh", "100vh", "100vh", "93.9vh"]}
       align={"center"}
       justify={"center"}
       bgImage= "url('../../public/assets/parallax-img-1.jpg')"
@@ -51,8 +51,7 @@ export default function SimpleCard() {
           <Heading fontSize={"4xl"} color="gray.100">Inicio de sesion</Heading>
         </Stack>
         <Box
-            width='450px'
-            height='400px'
+            width={["200px", "350px", "400px", "450px"]}
           rounded={"lg"}
           bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
@@ -61,7 +60,7 @@ export default function SimpleCard() {
           <Stack spacing={4}>
             <form onSubmit={handleSubmit}>
               <FormControl id="email">
-                <FormLabel mb={"8px"}>Email address</FormLabel>
+                <FormLabel mb={"8px"}>Correo Electrónico</FormLabel>
                 <Input
                   mb={"16px"}
                   borderColor="gray.400"
@@ -72,8 +71,8 @@ export default function SimpleCard() {
                 />
               </FormControl>
               <FormControl id="password">
-                <FormLabel mb="8px">Password</FormLabel>
-                <InputGroup size='lg'>
+                <FormLabel mb="8px">Contraseña</FormLabel>
+                <InputGroup size={['lg']}>
                   <Input
                     borderColor="gray.400"
                     mb="16px"
