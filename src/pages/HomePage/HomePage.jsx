@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <>
 
-      <div style={{background:'white', height:'700px'}}>
+      <div style={{background:'white', height:'1400px'}}>
         <Landing/>
       </div>
       

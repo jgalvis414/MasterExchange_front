@@ -33,14 +33,14 @@ const InputBuy = (props) => {
           {props.crypto != null ? `${props.crypto} Price Calculator` : " "}
         </h2>
         <input
-          className="input"
+          className="input2"
           type="text"
           name="inputname"
           value={props.crypto != null ? ` 1 ${props.crypto} = ${data}$` : " "}
           disabled
         ></input>
         <input
-          className="input"
+          className="input2"
           type="number"
           placeholder="0.00"
           onChange={(event) => {
