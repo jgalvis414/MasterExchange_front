@@ -54,7 +54,7 @@ export default function Navbar5() {
 
     return (
         <>
-          <Box bg={useColorModeValue("#131a42")} px={4}>
+          <Box bg={useColorModeValue("#131a42")} px={4} minW="100%">
             <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
               <IconButton
                 size={"md"}
@@ -64,7 +64,7 @@ export default function Navbar5() {
                 onClick={isOpen ? onClose : onOpen}
               />
               <HStack spacing={8} alignItems={"center"} color='white'>
-                <Box w="180px" h='20px'>
+                <Box w={["120px", "150px", "140px", "180px"]} h='20px'>
                 <a href="/"><img src="https://i.ibb.co/DkpqKw7/exchange.png" alt="exchange" border="0" /></a>
                 </Box>
                 <HStack
@@ -85,19 +85,7 @@ export default function Navbar5() {
                   >
                     Inicio
                   </Link>
-                  <Link
-                    
-                    px={2}
-                    py={1}
-                    rounded={"md"}
-                    _hover={{
-                      textDecoration: "none",
-                      bg: useColorModeValue("green.200", "green.700"),
-                    }}
-                    href={"/Login"}
-                  >
-                    Iniciar Sesión
-                  </Link>
+                  
                 </HStack>
               </HStack>
     
@@ -106,9 +94,14 @@ export default function Navbar5() {
                 <Stack direction={"row"} spacing={2}>
         
                 <Link href='/register' textColor='white'>
-              <Button colorScheme='green' align='center' id="buttonRegister">
-                Registro
-              </Button>
+                  <Button w={["50px", "60px" ,"80px", "100px"]} colorScheme='green' align='center' id="buttonRegister" fontSize={["sm", "sm", "md", "md"]}>
+                    Registro
+                  </Button>
+                </Link>
+                <Link href={"/Login"} textColor="White">
+                  <Button w={["65px", "90px" ,"100px", "120px"]} colorScheme='green' align='center' fontSize={["xs", "sm", "md", "md"]}>
+                    Iniciar Sesión
+                  </Button>
                 </Link>
                  
                 </Stack>
