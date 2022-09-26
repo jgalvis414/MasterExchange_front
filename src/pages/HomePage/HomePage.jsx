@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/auth";
 import { Link } from "react-router-dom"
-import Soporte from "../../../public/assets/Soporte.svg"
-import Seguridad from "../../../public/assets/seguridad.svg"
-import User from "../../../public/assets/User.svg"
-import Crecer from "../../../public/assets/Crecer.svg"
+import Soporte from "../../assets/Soporte.svg"
+import Seguridad from "../../assets/seguridad.svg"
+import User from "../../assets/User.svg"
+import Crecer from "../../assets/Crecer.svg"
 import "./HomePage.css"
 import Footer from "../../utils/Footer/Footer";
 
