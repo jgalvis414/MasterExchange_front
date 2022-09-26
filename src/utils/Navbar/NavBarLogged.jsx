@@ -25,6 +25,7 @@ import {
   CloseIcon,
   AddIcon,
 } from "@chakra-ui/icons";
+
 import { AuthContext } from "../../contexts/auth";
 
 
@@ -42,10 +43,6 @@ const NavLink = ({ children }) => (
     {children}
   </Link>
 );
-
-
-
-
 
 export default function NavBarLogged() {
     const { logout } = useContext(AuthContext);

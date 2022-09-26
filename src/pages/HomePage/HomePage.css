@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+
+
+
+.body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+}
+
+
+.bienvenida {
+    display: flex;
+    justify-content: start;
+    align-content: flex-start;
+    height: 79vh;
+    border-radius: 3px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../../assets/fondoBienvenida.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
+}
+
+.conteinerslogan {
+    min-height: 100%;
+    min-width: 100%;
+    position: relative;
+}
+
+.slogan {
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 60%;
+    font-size: 6rem;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.InfoBienvenida {
+    top:55%;
+    color: white;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 50%;
+    font-size: 35px;
+    position: absolute;
+}
+
+.HomeTable {
+    display: flex;
+    height: 75vh;
+    border-radius: 3px;
+}    
+
+.ContainerTable {
+    width: 100%;
+    margin-left: 100px;
+    margin-right: 100px;
+    min-height: 80%;
+    position: relative;
+}
+
+.Table {
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    background-color: #f0f8ff;
+}
+
+
+.Table div {
+    max-width: 1000px;
+    border-radius: 5px;
+}
+
+.HomeServices {
+    height: 120vh;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    background-color: aliceblue;
+}
+
+.WrapperServices{
+    display: flex;
+    flex-flow: row wrap;
+    margin:0 0 0 -.5rem;
+    height: 100%;
+}
+
+.titleServices {
+    font-size: 50px;
+    font-weight:500;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.conteinerServicesLeft { 
+    flex: 1 0 37%;  
+    padding: 0 0.5rem 1rem;
+    margin:10% 0 2% 10%;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 25%)
+}
+
+.conteinerServices {
+    flex: 1 0 37%;  
+    padding: 0 0.5rem 1rem;
+    margin:10% 10% 2% 2%;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 25%);
+}
+
+.conteinerServicesRight { 
+    flex: 1 0 37%;  
+    padding: 0 0.5rem 1rem;
+    margin:3% 0 2% 10%;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 25%)
+}
+
+.conteinerServices4 {
+    flex: 1 0 37%;  
+    padding: 0 0.5rem 1rem;
+    margin:3% 10% 2% 2%;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 25%);
+}
+
+
+.conteinerImgServices {
+    width: 100%;
+    height:40%;
+    margin-top: 3%;
+    position: relative;
+}
+
+.conteinerServices img {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 100%;
+    position: absolute;
+}
+
+.conteinerServicesLeft img {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 100%;
+    position: absolute;
+}
+
+.conteinerServicesRight img {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 100%;
+    position: absolute;
+}
+.conteinerServices4 img {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 100%;
+    position: absolute;
+}
+
+.conteinerTitleServices {
+    width: 100%;
+    height: 10%;
+    margin-top: 3%;
+    position: relative;
+}
+
+.TitleServicesLeft {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    font-size: 1.6rem;
+    text-align: center;
+    position: absolute;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.TitleServices {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    font-size: 1.6rem;
+    text-align: center;
+    position: absolute;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.TitleServicesRight {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    position: absolute;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.TitleServices4 {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    text-align: center;
+    font-size: 1.6rem;
+    position: absolute;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.conteinerInfoServices {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+.infoServices {
+    display: block;
+    margin-block-start: 2rem;
+    margin-block-end: 1rem;
+    margin-inline-start: 0px;
+    margin-inline-end: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    font-size: 1.2rem;
+    position: absolute;
+    text-align: center;
+    color: rgb(139, 139, 139);
+}
+
+.HomeAttention {
+    display: flex;
+    height: 30vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/parallax-img-1.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    flex-direction: column;
+    border-radius: 3px;
+}
+
+.conteinerAttentionTitle {
+    width: 100%;
+    height: 30%;
+    position: relative;
+}
+
+.AttentionTitle {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    position: absolute;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.conteinerButtonAttention {
+    width: 100%;
+    height: 70%;
+    position: relative;
+}
+
+.ButtonAttention1 {
+    padding: 1% 3%;
+    border: rgb(255, 255, 255) 2px solid;
+    background-color: #38a169;
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    top:50%;
+    left: 49%;
+    transform: translate(-100%, -50%);
+    position: absolute;
+}
+
+.ButtonAttention2 {
+    padding: 1% 3%;
+    border: rgb(255, 255, 255) 2px solid;
+    background-color: #29774f;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    top:50%;
+    left: 52%;
+    transform: translate(0, -50%);
+    position: absolute;
+}
+
+.HomeFooter {
+    width: 100%;
+    background-color: #0a141d;
+}
+
+.HomeFooter .grupo2 {
+    background-color: #080b1c;
+    padding: 15px 10px;
+    text-align: center;
+    color: white;
+}
+
+.HomeFooter .grupo2 small {
+    font-size: 15px;
+}
+
+@media screen and (max-width:800px) {
+    .HomeFooter .grupo2 {
+        width: 100%;
+        padding: 25px 0;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+    .slogan {
+        font-size: 70px;
+    }
+
+    .HomeTable {
+        height: 68vh;
+    }
+
+    .infoServices {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+
+    .TitleServicesLeft {
+        top: -10px;
+    }
+
+    .conteinerServices img {
+        width: 45%;
+    }
+
+    .conteinerServicesRight img {
+        width: 45%;
+    }
+
+    .conteinerServicesLeft img {
+        width: 45%;
+    }
+
+    .conteinerServices4 img {
+        width: 45%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    .bienvenida {
+        height: 60vh;
+    }
+    
+    .slogan {
+        font-size: 50px;
+    }
+
+    .InfoBienvenida {
+        font-size: 20px;
+    }
+
+    .HomeTable {
+        height: 50vh;
+    }
+    
+    .Table div {
+        max-width: 500px;
+    }
+
+    .titleServices {
+        font-size: 30px;
+    }
+    
+    .infoServices {
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .TitleServicesLeft {
+        width: 100%;
+        font-size: 1.2em;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .TitleServices {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+    .TitleServicesRight {
+        width: 100%;
+        font-size: 1.2rem;
+        top: 30%;
+    }
+    .TitleServices4 {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .AttentionTitle {
+        width: 100%;
+        font-size: 2.8rem;
+    }
+
+    .conteinerServices img {
+        width: 60%;
+        margin-top: 5%;
+    }
+    
+    .conteinerServicesLeft img {
+        width: 60%;
+        margin-top: 5%;
+    }
+    
+    .conteinerServicesRight img {
+        width: 60%;
+        margin-top: 5%;
+    }
+    .conteinerServices4 img {
+        width: 60%;
+        margin-top: 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
+
+    .bienvenida {
+        height: 40vh;
+        width: 100%;
+    }
+
+    .slogan {
+        width: 70%;
+        font-size: 2.7rem;
+    }
+
+    .InfoBienvenida {
+        top:50%;
+        color: white;
+        left: 52%;
+        transform: translate(-50%,0);
+        width: 60%;
+        font-size: 1.2rem;
+        position: absolute;
+    }
+
+    .HomeTable {
+        display: flex;
+        height: 40vh;
+        border-radius: 3px;
+    }  
+
+    .ContainerTable {
+        width: 100%;
+        margin-left: 2%;
+        margin-right: 2%;
+        min-height: 80%;
+        position: relative;
+    }
+
+    .Table {
+        top: -25%;
+    }
+
+    .Table div {
+        width: 300px;
+        height: 300px;
+    }
+
+    .HomeServices {
+        height: 55vh;
+        
+    }
+
+    .WrapperServices {
+        width: 100%;
+        height: 100%;
+    }
+
+    .titleServices {
+        font-size: 1.8rem;
+        width: auto;
+        transform: translate(-50%, 0);
+    }
+
+    .conteinerServicesLeft {   
+        margin: 10% 0 5% 10%;
+        border-radius: 10px;
+        box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 20%)
+    }
+
+    .conteinerServices {
+        margin:10% 10% 5% 5%;
+        border-radius: 10px;
+        box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 20%);
+    }
+
+    .conteinerServicesRight { 
+        margin: 5% 0 10% 10%;
+        border-radius: 10px;
+        box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 20%);
+    }
+
+    .conteinerServices4 { 
+        margin:5% 10% 10% 5%;
+        border-radius: 10px;
+        box-shadow: 0rem 0.25rem 1.75rem rgb(30 34 40 / 20%);
+    }
+    
+
+    .conteinerImgServices {
+        height: 50%;
+    }
+
+    .conteinerServices img {
+        width: 40%;
+        margin-top: 5%;
+    }
+    
+    .conteinerServicesLeft img {
+        width: 40%;
+        margin-top: 5%;
+    }
+    
+    .conteinerServicesRight img {
+        width: 40%;
+        margin-top: 5%;
+    }
+    .conteinerServices4 img {
+        width: 40%;
+        margin-top: 5%;
+    }
+
+    .conteinerTitleServices {
+        width: 100%;
+        height: 20%;
+        position: relative;
+        margin-top: 10%;
+    }
+
+    .TitleServicesLeft {
+        width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .TitleServices {
+        width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .TitleServicesRight {
+        width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .TitleServices4 {
+        width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .conteinerInfoServices {
+        display: none;
+    }
+
+    .infoServices {
+        display: none;
+    }
+
+    .AttentionTitle {
+        width: 100%;
+        font-size: 2.8rem;
+    }
+
+    .ButtonAttention1 {
+        padding: 2.5% 7%;
+        border: rgb(255, 255, 255) 2px solid;
+        background-color: #38a169;
+        color: rgb(255, 255, 255);
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        top:50%;
+        left: 48%;
+        transform: translate(-100%, -50%);
+        position: absolute;
+    }
+
+    .ButtonAttention2 {
+        padding: 2.5% 7%;
+        border: rgb(255, 255, 255) 2px solid;
+        background-color: #29774f;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        top:50%;
+        left: 55%;
+        transform: translate(0, -50%);
+        position: absolute;
+    }
+
+    
+}

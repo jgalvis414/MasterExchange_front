@@ -1,140 +1,197 @@
+import {
+  Flex,
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  Stack,
+  Link,
+  Button,
+  Heading,
+  useColorModeValue,
+  FormHelperText,
+} from "@chakra-ui/react";
+
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
-
-//chakra ui
-import {
-  FormControl,
-  FormErrorMessage,
-  FormHelperText,
-  Input,
-} from "@chakra-ui/react";
-
-//Components
-import swal from 'sweetalert'
-
-const schema = yup.object().shape({
-  email: yup.string().email().required(),
-  name: yup.string().required(),
-  nickname: yup.string().required(),
-  password: yup.string().required(),
-  passwordConfirmation: yup.string()
-  .oneOf([yup.ref('password'), null], 'Passwords must match'),
-  gender: yup.string().required(),
-  age: yup.number().required().positive().integer().min(18),
-  tel:yup.number()
-
-});
-
-const fnSend = (data) => {
-  (async (data) => {
-    let response = await axios.post(
-      "http://localhost:8888/fn-addUser",
-      JSON.stringify(data)
-    );
-    console.log(response.data);
-  })(data);
-
-  return swal({
-    title:'Registrado con exito',
-    icon: 'success',
-    
-
-  });
-};
+import swal from "sweetalert";
 
 export default function RegisterPage() {
+  const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+  const schema = yup.object().shape({
+    email: yup.string().email().required(),
+    name: yup.string().required(),
+    nickname: yup.string().required(),
+    password: yup.string().required(),
+    passwordConfirmation: yup.string()
+      .oneOf([yup.ref("password"), null], "Passwords must match"),
+    tel: yup.string().matches(phoneRegExp, 'Phone number is not valid')
+  });
+
+  const fnSend = (data) => {
+    (async (data) => {
+      let responseEmail = await axios.get(`https://comforting-bunny-ac7ccc.netlify.app/fn-countEmail?email=${data.email}`)
+      let responseTel = await axios.get(`https://comforting-bunny-ac7ccc.netlify.app/fn-countEmail?tel=${data.tel}`)
+      if (responseEmail.data != 0){
+        return swal({
+          title: "El correo ingresado ya existe",
+          text: 'Intenta utilizar otro correo',
+          icon: "error",
+        })       
+
+      } else  if (responseTel.data != 0){
+        return swal({
+          title: "El numero telefonico ingresado ya existe",
+          text: 'Intenta utilizar otro numero',
+          icon: "error",
+        })       
+
+      }             
+      else {
+        await axios.post(
+          "https://comforting-bunny-ac7ccc.netlify.app/fn-addUser",
+          JSON.stringify(data)
+        );
+        return swal({
+          title: "Registrado con exito",
+          text: 'Inicia sesion para continuar',
+          icon: "success",
+        }).then(function() {
+          window.location = "/login";
+      });
+
+      }
+     
+    })(data);
+  };
+
+
   const {
     register,
-    formState: { errors },
+    formState: { errors, },
     handleSubmit,
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm({
+    resolver: yupResolver(schema),
+    mode: "onTouched",
+    reValidateMode: "onSubmit",
+  });
 
   return (
-    <>
-    <div className="body">
-      <div className="signupFrm">
-        <form onSubmit={handleSubmit(fnSend)} className="form">
-          <h1 className="title">Registro</h1>
-          <div className="inputContainer">
-            <FormControl>
-              <Input
-                type="email"
-                placeholder=""
-                {...register("email")}
-                className="input"
-              />
-              <label className="label">Email</label>
-              <FormHelperText>{errors.email?.message}</FormHelperText>
-            </FormControl>
-          </div>
-          <div className="inputContainer">
-            <input
-              className="input"
-              type="text"
-              placeholder=""
-              {...register("name")}
-            />
-            <label className="label">Nombre y Apellido</label>
-            <p>{errors.name?.message}</p>
-          </div>
-          <div className="inputContainer">
-            <input
-              type="text"
-              placeholder=""
-              {...register("nickname")}
-              className="input"
-            />
-            <label className="label">Nombre de Usuario</label>
-            <p>{errors.nickname?.message}</p>
-          </div>
-          <div className="inputContainer">
-            <input
-              className="input"
-              type="password"
-              placeholder=""
-              {...register("password")}
-            />
-            <label className="label">Contraseña </label>
-            <p>{errors.password?.message}</p>
-          </div>
+    <Flex
+      minH={"100vh"}
+      align={"center"}
+      justify={"center"}
+      bg={useColorModeValue("gray.50", "gray.800")}
+    >
+      <form onSubmit={handleSubmit(fnSend)}>
+        <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+          <Stack align={"center"}>
+            <Heading fontSize={"4xl"}>Registro</Heading>
+          </Stack>
+          <Box
+            rounded={"lg"}
+            bg={useColorModeValue("white", "gray.700")}
+            boxShadow={"lg"}
+            p={8}
+            width="300px"
+          >
+            <Stack spacing={4}>
+              <FormControl>
+                <FormLabel>Email</FormLabel>
+                <Input type="email" {...register("email")} id="email" />
+                <FormHelperText>{errors.email?.message}</FormHelperText>
+              </FormControl>
 
-          <div className="inputContainer">
-            <input 
-            className="input"
-            type="password" 
-            placeholder="" 
-            {...register("passwordConfirmation")} />
-            <label className="label">Confirmar Contraseña</label>
-            <p>{errors.passwordConfirmation?.message}</p>
-          </div>
+              <FormControl>
+                <FormLabel>Nombre y Apellido</FormLabel>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder=""
+                  {...register("name")}
+                  className="input"
+                />
+                <FormHelperText>{errors.name?.message}</FormHelperText>
+              </FormControl>
 
-          <div className="inputContainer">
-            <input
-              type="number"
-              placeholder=""
-              {...register("age")}
-              className="input"
-            />
-            <label className="label">Edad </label>
-            <p>{errors.age?.message}</p>
-          </div>
-          <p></p>
-          <input {...register("gender")} type="radio" value="Masculino" />
-          <label htmlFor="Masculino">Masculino</label>
-          <input {...register("gender")} type="radio" value="Femenino" />
-          <label htmlFor="Femenino">Femenino</label>
-          <input {...register("gender")} type="radio" value="Indefinido" />
-          <label htmlFor="Indefinido">Indefinido</label>
-          <p>{errors.gender?.message}</p>
+              <FormControl>
+                <FormLabel>Nombre de usuario</FormLabel>
+                <Input
+                  id="nickname"
+                  type="text"
+                  placeholder=""
+                  {...register("nickname")}
+                />
+                <FormHelperText>{errors.nickname?.message}</FormHelperText>
+              </FormControl>
 
-          <p>Presione enviar para enviar su formulario</p>
-          <input type="submit" className="submitBtn" />
-        </form>
-      </div>
-      </div>
-      </>
+              <FormControl>
+                <FormLabel>Contrasena</FormLabel>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder=""
+                  {...register("password")}
+                />
+                <FormHelperText>{errors.password?.message}</FormHelperText>
+              </FormControl>
+
+              <FormControl>
+                <FormLabel>Confirmar Contrasena</FormLabel>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder=""
+                  {...register("passwordConfirmation")}
+                />
+                <FormHelperText>
+                  {errors.passwordConfirmation?.message}
+                </FormHelperText>
+              </FormControl>
+
+              <FormControl>
+                <FormLabel>Telefono</FormLabel>
+                <Input
+                  id="tel"
+                  type="tel"
+                  placeholder=""
+                  {...register("tel")}
+                />
+                <FormHelperText>
+                  {errors.tel?.message}
+                </FormHelperText>
+              </FormControl>
+
+              <Stack spacing={10}>
+                <Stack
+                  direction={{ base: "column", sm: "row" }}
+                  align={"start"}
+                  justify={"space-between"}
+                >
+                  <Link color={"purple.500"} href={"/login"}>
+                    Ya tienes cuenta?
+                  </Link>
+                </Stack>
+                <Button
+                  type="submit"
+                  bg={"purple.400"}
+                  color={"white"}
+                  _hover={{
+                    bg: "purple.800",
+                  }}
+                >
+                  Registrarme
+                </Button>
+              </Stack>
+            </Stack>
+          </Box>
+        </Stack>
+      </form>
+    </Flex>
   );
 }

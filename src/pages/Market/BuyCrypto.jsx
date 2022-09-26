@@ -3,14 +3,16 @@ import { useState, useEffect } from "react";
 import LineChart from "./LineChart";
 import InputBuy from "./InputBuy";
 //import './BuyCrypto.css'
+import { Select } from "@chakra-ui/react";
 
 const BuyCryto = () => {
-  const [crypto, setCrypto] = useState(null);
+  const [crypto, setCrypto] = useState('BTC');
+
 
   return (
     <>
       <div>
-        <select className="select-group"
+        <Select className="select-group"
           onChange={(e) => {
             setCrypto(e.target.value);
           }}
@@ -22,14 +24,15 @@ const BuyCryto = () => {
           <option>BNB</option>
           <option>DASH</option>
           <option>LTC</option>
-        </select>
+        </Select>
         <div className="containerBuy">
+        <div className="inputContainer">
+            <InputBuy crypto={crypto} />
+          </div>
           <div className="chartContainer">
             <LineChart crypto={crypto} />
           </div>
-          <div className="inputContainer">
-            <InputBuy crypto={crypto} />
-          </div>
+         
         </div>
       </div>
     </>
